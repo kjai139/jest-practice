@@ -39,8 +39,12 @@ it('caesar cipher', () => {
     expect(caesarCipher('defend the east wall of the castlez')).toMatch('efgfoe uif fbtu xbmm pg uif dbtumfa')
 })
 
-it('caesar cipher 2', () => {
+it('caesar cipher 2 /w uppercase', () => {
     expect(caesarCipher('helloz MAN!')).toMatch('ifmmpa NBO!')
+})
+
+it('caesar cipher 3 /w 2 shifts', () => {
+    expect(caesarCipher('helloz MAN!', 2)).toMatch('jgnnqb OCP!')
 })
 
 let array1 = analyzeArray([1, 8, 3, 4, 2, 6])
