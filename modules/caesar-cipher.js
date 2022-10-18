@@ -3,15 +3,31 @@ const caesarCipher = (str, shift=1) => {
 
     let result =[]
 
+    
+
     for (let x = 0; str.length > x; x ++) {
         // console.log(arr.indexOf(str[x]))
       
 
         if (arr.indexOf(str[x]) == -1) {
-            result.push(' ')
+            
+            if (arr.indexOf(str[x].toLowerCase()) == -1){
+                result.push(str[x])
+            }
+            else {
+                let index = arr.indexOf(str[x].toLowerCase()) + shift
+            
+
+                if (index > 25) {
+                    index -= 26
+                }
+                let letter = arr[index]
+                result.push(letter.toUpperCase())
+
+            }
         }else {
             let index = arr.indexOf(str[x]) + shift
-            console.log(index)
+            
 
             if (index > 25) {
                 index -= 26
